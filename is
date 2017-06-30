@@ -1,3 +1,5 @@
 #!/bin/bash
+# Syntax: is <FileName>
+# Explenation: Checks if the selected file is in working directory
 argument=$1
 ls -a | grep $argument
