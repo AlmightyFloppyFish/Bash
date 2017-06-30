@@ -1,0 +1,4 @@
+#!/bin/bash
+inp=$1
+
+exec sudo nano-normal $inp

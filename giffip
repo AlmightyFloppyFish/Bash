@@ -1,0 +1,30 @@
+#!/bin/bash
+echo "Made By FloppyFish"
+echo "Syntax: giffip <IP> <Interface>"
+echo ""
+echo ""
+
+cip=$1
+interface=$2
+
+
+if [ $1 = "drop" ]
+then
+	sudo sed -i '56s/.*/# none/' /etc/dhcp/dhclient.conf
+	sudo dhclient -r -v
+	sleep 1
+	sudo dhclient -4 -d -v -cf /etc/dhcp/dhclient.conf $interface &
+	sleep 1
+	exit
+fi
+
+if [ $1 -ne "drop" ]
+then
+# sudo sed -i 55s/.*/$cip/ /etc/dhcp/dhclient.conf
+	sudo sed -i '56s/.*/send dhcp-requested-address '$cip';/' /etc/dhcp/dhclient.conf
+	sudo dhclient -r -v
+	sleep 1
+	sudo dhclient -4 -d -v -cf /etc/dhcp/dhclient.conf $interface &
+	sleep 1
+fi
+exit

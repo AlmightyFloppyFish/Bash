@@ -1,0 +1,3 @@
+#!/bin/bash
+argument=$1
+ls -a | grep $argument
