@@ -1,4 +1,5 @@
 #!/bin/bash
+# Syntax: Use exactly the same way as normal nano
 inp=$1
 
 exec sudo nano-normal $inp
