@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "Made By FloppyFish"
+echo "Made By AlmightyFloppyFish"
 echo "Syntax: giffip <IP> <Interface>"
 echo ""
 echo ""
