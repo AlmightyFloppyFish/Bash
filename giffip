@@ -8,7 +8,7 @@ cip=$1
 interface=$2
 
 
-if [ $1 = "drop" ]
+if [ "$1" = "drop" ]
 then
 	sudo sed -i '56s/.*/# none/' /etc/dhcp/dhclient.conf
 	sudo dhclient -r -v
@@ -18,7 +18,7 @@ then
 	exit
 fi
 
-if [ $1 -ne "drop" ]
+if [ "$1" != "drop" ]
 then
 # sudo sed -i 55s/.*/$cip/ /etc/dhcp/dhclient.conf
 	sudo sed -i '56s/.*/send dhcp-requested-address '$cip';/' /etc/dhcp/dhclient.conf
